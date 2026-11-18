@@ -1,0 +1,29 @@
+---
+- name: Deployer Apache avec Docker
+  hosts: prod
+  become: true
+
+  tasks:
+    # Prérequis
+    - name: Installer Docker et le module Python docker
+      ansible.builtin.apt:
+        name:
+          - docker.io
+          - python3-docker
+        state: present
+        update_cache: true
+
+    - name: Demarrer Docker
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: true
+
+    # Conteneur Apache
+    - name: Lancer le conteneur Apache
+      community.docker.docker_container:
+        name: webapp
+        image: httpd
+        state: started
+        ports:
+          - "80:80"
