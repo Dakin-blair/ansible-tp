@@ -8,10 +8,8 @@ Déploiement automatisé d'un serveur **Apache (httpd)** dans un conteneur **Doc
 ![AWS](https://img.shields.io/badge/AWS-EC2-FF9900?logo=amazonwebservices&logoColor=white)
 ![Debian](https://img.shields.io/badge/Debian-12-A81D33?logo=debian&logoColor=white)
 
-**Cours :** Bootcamp DevOps EAZYTraining — module Ansible
-**Auteur :** Dakin Blair Noubouossie
 
-![Page par défaut d'Apache](images/it-works.png)
+![Page par défaut d'Apache](images/it-works.jpeg)
 
 ## Sommaire
 
