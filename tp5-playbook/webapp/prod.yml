@@ -3,4 +3,4 @@ all:
     prod:
       hosts:
         client1:
-          ansible_host: 172.31.39.170
+          ansible_host: 18.188.139.47
