@@ -146,7 +146,7 @@ client1 : ok=5 changed=1 unreachable=0 failed=0 skipped=1
 
 | Problème | Cause | Solution |
 |---|---|---|
-| `UNREACHABLE`, connexion vers **18.188.139.47** | `prod.yml` contenait l'**IP publique** de client1, qui change à chaque redémarrage | Utiliser l'**IP privée** (172.31.39.170), qui ne change pas |
+| `UNREACHABLE`, connexion vers **<IP publique>** | `prod.yml` contenait l'**IP publique** de client1, qui change à chaque redémarrage | Utiliser l'**IP privée** (172.31.39.170), qui ne change pas |
 | `rm tp6` ne fonctionne pas | `rm` ne supprime pas les dossiers | `rm -r` |
 | `syntax error near unexpected token '<'` | Les chevrons `< >` de la documentation ont été copiés | Les retirer : ce sont des repères à remplacer |
 | `Invalid flags before the subcommand` | Faute de frappe `-chldir` | `-chdir` |
