@@ -1,0 +1,29 @@
+---
+- name: Deployer WordPress avec Docker
+  hosts: prod
+  become: true
+  vars_files:
+    - files/secrets/credentials.vault
+  vars:
+    system_user: admin
+    compose_binary_dir: /usr/bin
+    domain: localhost
+    wp_db_psw: "{{ admin_password }}"
+    db_root_psw: "{{ admin_password }}"
+
+  pre_tasks:
+    # Prérequis du rôle
+    - name: Installer docker-compose
+      ansible.builtin.apt:
+        name: docker-compose
+        state: present
+        update_cache: true
+
+    # Libérer le port 80
+    - name: Supprimer le conteneur Apache
+      community.docker.docker_container:
+        name: webapp
+        state: absent
+
+  roles:
+    - wordpress
